@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+
+development:
+  <<: *default
+  database: sandbox_api_development
+
+test:
+  <<: *default
+  database: sandbox_api_test
+
+# production:
+#   <<: *default
+#   database: sandbox_api_production
+#   username: sandbox_api
+#   password: <%= ENV['SANDBOX_API_DATABASE_PASSWORD'] %>
