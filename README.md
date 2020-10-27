@@ -60,9 +60,8 @@ EDITOR="vim --wait" bin/rails credentials:edit
 
 #### Encrypted Secrets Resources
 
-[Rails environmental-security](https://edgeguides.rubyonrails.org/security.html#environmental-security)
-
-[Encrypted Secrets](https://medium.com/@kirill_shevch/encrypted-secrets-credentials-in-rails-6-rails-5-1-5-2-f470accd62fc)
+* [Rails environmental-security](https://edgeguides.rubyonrails.org/security.html#environmental-security)
+* [Encrypted Secrets](https://medium.com/@kirill_shevch/encrypted-secrets-credentials-in-rails-6-rails-5-1-5-2-f470accd62fc)
 
 <br>
 
@@ -72,7 +71,7 @@ EDITOR="vim --wait" bin/rails credentials:edit
 
 If you would want to generate new credentials, or if your master.key has been compromised, you should generate new credential files.
 
-Currently (2020-11), no automatic key regeneration feature is available; we have to do it manually.
+Currently, no automatic key generation feature is available, it has to be done manually.
 
 * Copy content of original credentials `rails credentials:show` somewhere temporarily.
 
@@ -88,8 +87,9 @@ Currently (2020-11), no automatic key regeneration feature is available; we have
 
 ## API Details
 
-The API will expect all requests to made with a JSON body, and if logged in with the Authorization header Bearer token.
+The API will expect all requests to made with a JSON body, and if logged in, you will need to include the Authorization header Bearer token for specific API endpoints.
 
+<br>
 
 ## Devise
 
@@ -109,7 +109,7 @@ Users can be created and updated using `form-data` or `JSON`. However, to add an
 
 ### Creating a User with Form-Data (to upload an avatar)
 
-You can use curl or postman or any utility that allows you to send `multipart/form-data`. The example in this section shows how to use curl:
+To POST, you can use curl or postman or any utility that allows you to send `multipart/form-data`. The following example demonstrates how to use curl:
 
 ```sh
 curl -v \
@@ -119,7 +119,7 @@ curl -v \
   -F user[first_name]=Baked \
   -F user[last_name]=Beans \
   -F user[username]=bakedbeans920 \
-  -F user[email]=bakedbeans+920@gmail.com \
+  -F user[email]=bakedbeans920@gmail.com \
   -F user[password]=$Qwerty1 \
   -F user[password_confirmation]=$Qwerty1 \
   -F user[avatar]=@~/path/to/the/avatar.png
@@ -157,7 +157,7 @@ All fields are required. Fill in the values with whatever you would like. There 
       "first_name": "Baked",
       "last_name": "Beans",
       "username": "bakedbeans913",
-      "email": "bakedbeans+913@gmail.com",
+      "email": "bakedbeans913@gmail.com",
       "settings": { "roles": [ "user" ] },
       "created_at": "2020-08-15T20:50:19.621Z",
       "updated_at": "2020-08-15T20:50:19.626Z"
@@ -191,7 +191,7 @@ Once logged in the API will return the user data and the header Authorization to
       "first_name": "Baked",
       "last_name": "Beans",
       "username": "bakedbeans913",
-      "email": "bakedbeans+913@gmail.com",
+      "email": "bakedbeans913@gmail.com",
       "settings": {},
       "created_at": "2020-08-15T20:50:19.621Z",
       "updated_at": "2020-08-15T20:50:19.626Z"
