@@ -61,6 +61,7 @@ EDITOR="vim --wait" bin/rails credentials:edit
 #### Encrypted Secrets Resources
 
 [Rails environmental-security](https://edgeguides.rubyonrails.org/security.html#environmental-security)
+
 [Encrypted Secrets](https://medium.com/@kirill_shevch/encrypted-secrets-credentials-in-rails-6-rails-5-1-5-2-f470accd62fc)
 
 <br>
