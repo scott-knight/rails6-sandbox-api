@@ -28,7 +28,7 @@ gem "aws-sdk-s3", require: false
 
 
 # ------ SERIALIZATION -------------------
-gem 'fast_jsonapi'
+gem 'jsonapi-serializer'
 gem 'oj'
 
 
